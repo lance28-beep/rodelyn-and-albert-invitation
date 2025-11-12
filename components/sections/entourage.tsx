@@ -20,8 +20,8 @@ const ROLE_CATEGORY_ORDER = [
   "Candle Sponsors",
   "Veil Sponsors",
   "Cord Sponsors",
-  "Bridesmaids",
   "Groomsmen",
+  "Bridesmaids",
   "Flower Girls",
   "Ring/Coin Bearers",
 ]
@@ -380,20 +380,20 @@ export function Entourage() {
                             <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
                           </div>
                         )}
-                        <TwoColumnLayout leftTitle="Bridesmaids" rightTitle="Groomsmen">
+                        <TwoColumnLayout leftTitle="Groomsmen" rightTitle="Bridesmaids">
                           {(() => {
                             const maxLen = Math.max(bridesmaids.length, groomsmen.length)
                             const rows = []
                             for (let i = 0; i < maxLen; i++) {
-                              const left = bridesmaids[i]
-                              const right = groomsmen[i]
+                              const groomsman = groomsmen[i]
+                              const bridesmaid = bridesmaids[i]
                               rows.push(
                                 <React.Fragment key={`bridal-row-${i}`}>
-                                  <div key={`bridesmaid-cell-${i}`} className="px-3 sm:px-4 md:px-6">
-                                    {left ? <NameItem member={left} align="right" /> : <div className="py-1 sm:py-1.5 md:py-2" />}
-                                  </div>
                                   <div key={`groomsman-cell-${i}`} className="px-3 sm:px-4 md:px-6">
-                                    {right ? <NameItem member={right} align="left" /> : <div className="py-1 sm:py-1.5 md:py-2" />}
+                                    {groomsman ? <NameItem member={groomsman} align="right" /> : <div className="py-1 sm:py-1.5 md:py-2" />}
+                                  </div>
+                                  <div key={`bridesmaid-cell-${i}`} className="px-3 sm:px-4 md:px-6">
+                                    {bridesmaid ? <NameItem member={bridesmaid} align="left" /> : <div className="py-1 sm:py-1.5 md:py-2" />}
                                   </div>
                                 </React.Fragment>
                               )

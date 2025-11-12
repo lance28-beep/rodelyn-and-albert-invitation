@@ -46,11 +46,19 @@ export const siteConfig = {
     },
     note: "Please avoid jeans and casual attire."
   },
-  narrative: `It's amazing how a simple online game could change everything.
+  narrative: `In 2020, during the quiet days of the pandemic, fate found a way to bring two hearts together — one from Australia, and one from the Philippines. Through an online word game called Codenames, Brendan and Airez met. What started as playful teasing soon turned into long conversations, laughter, and a friendship that grew stronger with every passing day. \n
 
-We're Airez and Brendan, and Codenames was where our story began. What started as playful banter soon blossomed into something real — a connection we couldn't ignore. Despite the distance and different time zones, we found strength in each other. Every message, every call, every small act of love became proof of what we were building together.
+For years, they were just friends — two souls connected across miles and time zones. But even through screens, something beautiful began to bloom. Their bond deepened, their connection strengthened, and before they knew it, friendship had turned into love. \n
 
-Now, we're ready to take the next step — hand in hand, heart to heart. A lifetime of love, a partnership built on trust, and a future we're both so excited to create. ❤️`,
+Then came July 23, 2022 — the day they made it official in private. It was a quiet promise between two hearts who had found something rare and real — because for both Brendan and Airez, this was their first love. ❤️ \n
+
+A few months later, on October 23, 2022, Brendan flew from Australia to the Philippines to finally meet Airez in person — and her family for the first time. That day was filled with emotions, laughter, and happy tears. It was also the day they made their relationship public, proudly sharing their love with the world after keeping it private for so long. \n
+
+In July 2025, their story reached a beautiful turning point. Brendan, together with his parents, returned to the Philippines to meet Airez’s family once again and proposed in front of them — a heartfelt moment that brought both families together in love and joy. \n
+
+From a simple online game to a love that grew through distance, patience, and faith — their journey is a beautiful reminder that true love knows no distance and always finds its way. \n
+
+And now, hand in hand, heart to heart, Brendan and Airez are ready to begin their forever — a lifetime of love, laughter, and endless “us.” ❤️`,
   colors: {
     primary: "#0A3428",
     secondary: "#106552",

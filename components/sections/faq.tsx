@@ -13,7 +13,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What is the dress code?",
     answer:
-      "We kindly request our guests to dress in formal attire to celebrate our special day. Principal Sponsors are requested to wear formal attire in any shade matching our wedding color palette.",
+      "Principal Sponsors: We encourage wearing Barong or Filipiniana to honor our celebration.\n\nGuests: We encourage formal or casual attire so you can celebrate comfortably with us.",
   },
   {
     question: "When and where is the ceremony?",

@@ -180,9 +180,15 @@ export function Details() {
               
               <div className="space-y-3 sm:space-y-4">
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
-                  <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Formal Attire</p>
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Principal Sponsors</p>
                   <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    We kindly request our guests to dress in formal attire to celebrate our special day.
+                    We encourage wearing Barong or Filipiniana to honor our celebration.
+                  </p>
+                </div>
+                <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Guests</p>
+                  <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
+                    We encourage formal or casual attire so you can celebrate comfortably with us.
                   </p>
                 </div>
 
