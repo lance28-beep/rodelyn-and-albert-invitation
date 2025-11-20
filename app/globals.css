@@ -19,11 +19,11 @@
   --secondary-foreground: oklch(0.985 0 0);
   /* Sage mapped to secondary */
   --sage: #106552;
-  /* Muted/light surfaces: gold #C3A161 */
+  /* Muted/light surfaces: sunlit gold #C3A161 */
   --muted: #C3A161;
   --muted-foreground: #0A3428;
-  /* Accent: burgundy red #751A2C */
-  --accent: #751A2C;
+  /* Accent: warm beige #C5A572 */
+  --accent: #C5A572;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -61,7 +61,7 @@
   --sage: #106552;
   --muted: #C3A161;
   --muted-foreground: #0A3428;
-  --accent: #751A2C;
+  --accent: #C5A572;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -178,6 +178,18 @@ html {
 /* Anton font class */
 .anton-regular {
   font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montez-regular {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.imperial-script-regular {
+  font-family: "Imperial Script", cursive;
   font-weight: 400;
   font-style: normal;
 }

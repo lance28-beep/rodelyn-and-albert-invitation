@@ -93,7 +93,7 @@ export function Entourage() {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-      <h3 className={`anton-regular text-base sm:text-lg md:text-xl lg:text-2xl font-bold uppercase text-[#BB8A3D] mb-2 sm:mb-3 md:mb-4 tracking-[0.15em] ${textAlign} ${className}`}>
+      <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase text-[#0A3428] mb-2 sm:mb-3 md:mb-4 tracking-[0.1em] ${textAlign} ${className} drop-shadow-sm`}>
         {children}
       </h3>
     )
@@ -114,10 +114,12 @@ export function Entourage() {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-      <div className={`flex flex-col ${containerAlign} justify-center py-1 sm:py-1.5 md:py-2 leading-relaxed`}>
-        <p className={`text-slate-700 text-[13px] sm:text-sm md:text-base font-medium ${textAlign}`}>{member.Name}</p>
+      <div className={`flex flex-col ${containerAlign} justify-center py-2 sm:py-2.5 md:py-3 leading-relaxed group/item transition-all duration-200 hover:scale-[1.02]`}>
+        <p className={`text-[#0A3428] text-[13px] sm:text-sm md:text-base lg:text-lg font-semibold ${textAlign} group-hover/item:text-[#106552] transition-colors duration-200`}>
+          {member.Name}
+        </p>
         {showRole && member.RoleTitle && (
-          <p className={`text-slate-500 text-[10px] sm:text-[11px] md:text-xs font-normal mt-0.5 leading-snug ${textAlign}`}>
+          <p className={`text-[#C5A572] text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-medium mt-0.5 sm:mt-1 leading-snug ${textAlign} tracking-wide uppercase`}>
             {member.RoleTitle}
           </p>
         )}
@@ -170,68 +172,63 @@ export function Entourage() {
   return (
     <section
       id="entourage"
-      className="relative min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-transparent"
+      className="relative min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-gradient-to-b from-[#0A3428] via-[#106552]/90 to-[#0A3428]"
     >
-      {/* Bottom corner decorations */}
+      {/* Subtle background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Bottom-left flower decoration */}
-        <img
-          src="/decoration/left-bottom-left-flower.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 z-10 w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] opacity-90 select-none pointer-events-none"
-        />
-        
-        {/* Bottom-right flower decoration */}
-        <img
-          src="/decoration/left-bottom-left-flower.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute bottom-0 right-0 z-10 w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] opacity-90 select-none pointer-events-none scale-x-[-1]"
-        />
+        {/* Soft gradient overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#C3A161]/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#C3A161]/5 to-transparent" />
       </div>
 
       {/* Section Header */}
-      <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-[#FFFFFF] mb-3 sm:mb-4 text-balance">
+      <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-4">
+        <h2 className="montez-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] font-normal text-[#FFFFFF] mb-3 sm:mb-4 md:mb-6 drop-shadow-[0_10px_35px_rgba(0,0,0,0.45)] leading-snug">
           Wedding Entourage
         </h2>
-        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-semibold text-[#F1EDE2] mb-3 sm:mb-4">
-          Organizational Chart
-        </h3>
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#FFFFFF]/90 font-light max-w-xl mx-auto leading-relaxed px-2">
+          Those who stand with us as we begin our journey
+        </p>
       </div>
 
       {/* Central Card Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        {/* White card with elegant border */}
-        <div className="relative bg-white/85 backdrop-blur-sm border border-[#F1EDE2]/30 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden">
-          {/* Inner gold border */}
-          <div className="absolute inset-2 sm:inset-3 md:inset-4 border border-[#F1EDE2] rounded-lg sm:rounded-xl pointer-events-none" />
+        {/* Enhanced card with gradient glow */}
+        <div className="relative bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-[#C3A161]/30 shadow-lg hover:shadow-xl transition-all duration-300 group">
+          {/* Subtle glow on hover */}
+          <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#C5A572]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+          
+          {/* Decorative corner accents */}
+          <div className="absolute top-0 left-0 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border-t-2 border-l-2 border-[#C3A161]/30 rounded-tl-lg sm:rounded-tl-xl md:rounded-tl-2xl" />
+          <div className="absolute top-0 right-0 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border-t-2 border-r-2 border-[#C3A161]/30 rounded-tr-lg sm:rounded-tr-xl md:rounded-tr-2xl" />
+          <div className="absolute bottom-0 left-0 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border-b-2 border-l-2 border-[#C3A161]/30 rounded-bl-lg sm:rounded-bl-xl md:rounded-bl-2xl" />
+          <div className="absolute bottom-0 right-0 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border-b-2 border-r-2 border-[#C3A161]/30 rounded-br-lg sm:rounded-br-xl md:rounded-br-2xl" />
+          
           {/* Card content */}
-          <div className="relative p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+          <div className="relative p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 z-10">
             {isLoading ? (
-              <div className="flex items-center justify-center py-24">
+              <div className="flex items-center justify-center py-24 sm:py-28 md:py-32">
                 <div className="flex flex-col items-center gap-4">
-                  <Loader2 className="h-12 w-12 animate-spin text-[#F1EDE2]" />
-                  <span className="text-[#AFC8E6] font-serif text-lg">Loading entourage...</span>
+                  <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#C5A572]" />
+                  <span className="text-[#0A3428]/70 font-serif text-base sm:text-lg">Loading entourage...</span>
                 </div>
               </div>
             ) : error ? (
-              <div className="flex items-center justify-center py-24">
+              <div className="flex items-center justify-center py-24 sm:py-28 md:py-32">
                 <div className="text-center">
-                  <p className="text-red-500 font-serif text-lg mb-2">{error}</p>
+                  <p className="text-red-600 font-serif text-base sm:text-lg mb-3">{error}</p>
                   <button
                     onClick={fetchEntourage}
-                    className="text-[#AFC8E6] hover:text-[#D8B0B0] font-serif underline"
+                    className="text-[#C5A572] hover:text-[#0A3428] font-serif underline transition-colors duration-200"
                   >
                     Try again
                   </button>
                 </div>
               </div>
             ) : entourage.length === 0 ? (
-              <div className="text-center py-24">
-                <Users className="h-16 w-16 text-[#F1EDE2]/50 mx-auto mb-4" />
-                <p className="text-[#AFC8E6] font-serif text-lg">No entourage members yet</p>
+              <div className="text-center py-24 sm:py-28 md:py-32">
+                <Users className="h-14 w-14 sm:h-16 sm:w-16 text-[#C3A161]/30 mx-auto mb-4" />
+                <p className="text-[#0A3428]/60 font-serif text-base sm:text-lg">No entourage members yet</p>
               </div>
             ) : (
             <>
@@ -248,8 +245,12 @@ export function Entourage() {
                   return (
                     <div key={category}>
                       {categoryIndex > 0 && (
-                        <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                          <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
+                        <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                          <div className="flex items-center gap-2 w-full max-w-md">
+                            <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                            <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                            <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                          </div>
                         </div>
                       )}
                       <TwoColumnLayout singleTitle="The Couple" centerContent={true}>
@@ -288,8 +289,12 @@ export function Entourage() {
                     return (
                       <div key="Parents">
                         {categoryIndex > 0 && (
-                          <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                            <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
+                          <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                            <div className="flex items-center gap-2 w-full max-w-md">
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                              <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                            </div>
                           </div>
                         )}
                         <TwoColumnLayout leftTitle="Parents of the Groom" rightTitle="Parents of the Bride">
@@ -333,8 +338,12 @@ export function Entourage() {
                     return (
                       <div key="HonorAttendants">
                         {categoryIndex > 0 && (
-                          <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                            <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
+                          <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                            <div className="flex items-center gap-2 w-full max-w-md">
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                              <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                            </div>
                           </div>
                         )}
                         <TwoColumnLayout leftTitle="Best Man" rightTitle="Maid/Matron of Honor">
@@ -376,8 +385,12 @@ export function Entourage() {
                     return (
                       <div key="BridalParty">
                         {categoryIndex > 0 && (
-                          <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                            <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
+                          <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                            <div className="flex items-center gap-2 w-full max-w-md">
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                              <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                            </div>
                           </div>
                         )}
                         <TwoColumnLayout leftTitle="Groomsmen" rightTitle="Bridesmaids">
@@ -419,8 +432,12 @@ export function Entourage() {
                     return (
                       <div key="Sponsors">
                         {categoryIndex > 0 && (
-                          <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                            <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
+                          <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                            <div className="flex items-center gap-2 w-full max-w-md">
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                              <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                              <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                            </div>
                           </div>
                         )}
                         <TwoColumnLayout leftTitle="Candle Sponsors" rightTitle="Veil Sponsors">
@@ -455,8 +472,12 @@ export function Entourage() {
                 return (
                   <div key={category}>
                     {categoryIndex > 0 && (
-                      <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                        <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#BB8A3D]/60 to-transparent"></div>
+                      <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                        <div className="flex items-center gap-2 w-full max-w-md">
+                          <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                          <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                          <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                        </div>
                       </div>
                     )}
                     <TwoColumnLayout singleTitle={category} centerContent={true}>
@@ -527,8 +548,12 @@ export function Entourage() {
                 const members = grouped[category]
                 return (
                   <div key={category}>
-                    <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                      <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#F1EDE2]/40 to-transparent"></div>
+                    <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                      <div className="flex items-center gap-2 w-full max-w-md">
+                        <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                        <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                        <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                      </div>
                     </div>
                     <TwoColumnLayout singleTitle={category} centerContent={true}>
                       {(() => {

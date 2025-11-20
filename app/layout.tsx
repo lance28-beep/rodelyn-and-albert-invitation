@@ -9,25 +9,25 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
 
 export const metadata: Metadata = {
-  title: "Brendan & Airez - Wedding Invitation",
+  title: "Albert & Rodelyn - Wedding Invitation",
   description:
-    "You're invited to the wedding of Brendan & Airez! Join us on December 28, 2025 in SMDC Jazz Residence. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+    "Celebrate the simple and faith-filled wedding of Albert Gupit and Rodelyn Ruga on December 8, 2025 at the Southern-Asia Pacific Division (SSD) Worship Hall in Silang, Cavite. RSVP, read the invitation, and get all event details online.",
   keywords:
-    "Brendan Airez wedding, Filipino wedding, RSVP, wedding gallery, wedding message wall, wedding invitation, 2025 weddings, love story, guestbook, wedding registry, wedding details, wedding venues SMDC Jazz Residence, #BrendanAndAirezWedding",
+    "Albert Rodelyn wedding, Bert Rhods wedding, Cavite wedding, SSD Worship Hall, emerald green beige wedding, RSVP, wedding invitation website, 2025 weddings, Filipino wedding, albertrhods25@gmail.com",
   authors: [
-    { name: "Brendan" },
-    { name: "Airez" },
+    { name: "Albert Gupit" },
+    { name: "Rodelyn Ruga" },
   ],
-  creator: "Brendan & Airez",
-  publisher: "Brendan & Airez",
+  creator: "Albert & Rodelyn",
+  publisher: "Albert & Rodelyn",
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://Airez-and-Brendan-invitation.vercel.app/"),
+  metadataBase: new URL("https://rodelyn-and-albert-invitation.vercel.app/"),
   alternates: {
-    canonical: "https://Airez-and-Brendan-invitation.vercel.app/",
+    canonical: "https://rodelyn-and-albert-invitation.vercel.app/",
   },
   icons: {
     icon: [
@@ -49,29 +49,29 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Brendan & Airez Wedding | December 28, 2025",
+    title: "Albert & Rodelyn Wedding | December 8, 2025",
     description:
-      "Celebrate the union of Brendan & Airez on December 28, 2025 in SMDC Jazz Residence. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://Airez-and-Brendan-invitation.vercel.app/",
-    siteName: "Airez and Brendan Wedding ",
+      "Join Albert & Rodelyn as they say “I do” on December 8, 2025 at the SSD Worship Hall in Silang, Cavite. View the invitation, RSVP details, and schedule online.",
+    url: "https://rodelyn-and-albert-invitation.vercel.app/",
+    siteName: "Rodelyn and Albert Wedding",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://Airez-and-Brendan-invitation.vercel.app/desktop-background/couple (1).jpg",
+        url: "https://rodelyn-and-albert-invitation.vercel.app/desktop-background/couple (6).jpg",
         width: 1200,
         height: 630,
-        alt: "Brendan & Airez Wedding Invitation - December 28, 2025",
+        alt: "Albert & Rodelyn Wedding Invitation - December 8, 2025",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brendan & Airez Wedding Invitation",
+    title: "Albert & Rodelyn Wedding Invitation",
     description:
-      "You're invited to the wedding of Brendan & Airez! December 28, 2025. RSVP, view our gallery, and leave a message! #BrendanAndAirezWedding",
-    images: ["https://Airez-and-Brendan-invitation.vercel.app/desktop-background/couple (1).jpg"],
-    creator: "@airezandbrendan",
+      "You're invited to the wedding of Albert & Rodelyn on December 8, 2025 at SSD Worship Hall, Silang, Cavite. RSVP and view the details online. #BertAndRhods",
+    images: ["https://rodelyn-and-albert-invitation.vercel.app/desktop-background/couple (6).jpg"],
+    creator: "@bertandrhods",
   },
   robots: {
     index: true,
@@ -91,40 +91,40 @@ export const metadata: Metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Event",
-      name: "Brendan & Airez Wedding",
-      startDate: "2026-02-14T14:00:00+08:00",
-      endDate: "2026-02-14T22:00:00+08:00",
+      name: "Albert & Rodelyn Wedding",
+      startDate: "2025-12-08T10:00:00+08:00",
+      endDate: "2025-12-08T14:00:00+08:00",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: [
         {
           "@type": "Place",
-          name: "SMDC Jazz Residence",
+          name: "Southern-Asia Pacific Division (SSD) Worship Hall",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Nicanor Garcia, Tower B, 41st floor and unit 4112",
-            addressLocality: "Makati, Manila",
-            addressRegion: "Metro Manila",
-            postalCode: "1209",
+            streetAddress: "SSD Compound, San Miguel",
+            addressLocality: "Silang",
+            addressRegion: "Cavite",
+            postalCode: "4118",
             addressCountry: "PH",
           },
         },
       ],
-      image: ["https://Airez-and-Brendan-invitation.vercel.app/desktop-background/couple (1).jpg"],
+      image: ["https://rodelyn-and-albert-invitation.vercel.app/desktop-background/couple (6).jpg"],
       description:
-        "You're invited to the wedding of Brendan & Airez! Join us on December 28, 2025 in SMDC Jazz Residence. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+        "In honor and gratitude to God who brought them together, Albert & Rodelyn invite you to witness their simple wedding on December 8, 2025 at the SSD Worship Hall in Silang, Cavite. RSVP details and schedule are available online.",
       organizer: {
         "@type": "Person",
-        name: "Brendan & Airez",
+        name: "Albert & Rodelyn",
       },
       offers: {
         "@type": "Offer",
-        url: "https://Airez-and-Brendan-invitation.vercel.app/",
+        url: "https://rodelyn-and-albert-invitation.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
       },
-      eventHashtag: "#BrendanAndAirezWedding",
+      eventHashtag: "#BertAndRhods",
     }),
   },
 }
@@ -139,7 +139,10 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#0A3428" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet" />
         <link rel="preload" as="image" href="/mobile-background/DSCF2614-min.jpg" media="(max-width: 767px)" />
         <link rel="preload" as="image" href="/desktop-background/DSCF2444-min.jpg" media="(min-width: 768px)" />
       </head>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Section } from "@/components/section"
+import { siteConfig } from "@/content/site"
 import Counter from "@/components/counter"
 
 interface TimeLeft {
@@ -12,6 +13,15 @@ interface TimeLeft {
 }
 
 export function Countdown() {
+  const ceremonyDate = siteConfig.ceremony.date
+  const ceremonyTimeDisplay = siteConfig.ceremony.time
+  const [ceremonyMonth = "December", ceremonyDayRaw = "08", ceremonyYear = "2025"] = ceremonyDate.split(" ")
+  const ceremonyDayNumber = ceremonyDayRaw.replace(/[^0-9]/g, "") || "08"
+  const parsedTargetDate = new Date(`${ceremonyDate} ${ceremonyTimeDisplay} GMT+0800`)
+  const targetTimestamp = Number.isNaN(parsedTargetDate.getTime())
+    ? Date.UTC(2025, 11, 8, 2, 0, 0)
+    : parsedTargetDate.getTime()
+
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -21,10 +31,7 @@ export function Countdown() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Target: December 28, 2025 at 11:00 AM GMT+8
-      // Compute using UTC to avoid timezone parsing inconsistencies across browsers
-      // 11:00 AM GMT+8 == 03:00 AM UTC
-      const targetDate = Date.UTC(2025, 11, 28, 3, 0, 0) // December is month 11 (0-indexed)
+      const targetDate = targetTimestamp
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -49,14 +56,14 @@ export function Countdown() {
     calculateTimeLeft()
     const timer = setInterval(calculateTimeLeft, 1000)
     return () => clearInterval(timer)
-  }, [])
+  }, [targetTimestamp])
 
   const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center gap-3 sm:gap-4">
       {/* Simple, elegant card */}
       <div className="relative group">
         {/* Subtle glow on hover */}
-        <div className="absolute -inset-1 bg-gradient-to-br from-[#C3A161]/20 to-[#751A2C]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+        <div className="absolute -inset-1 bg-gradient-to-br from-[#C3A161]/20 to-[#C5A572]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
         
         {/* Main card */}
         <div className="relative bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 lg:px-8 lg:py-7 border border-[#C3A161]/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#C3A161]/50 min-w-[65px] sm:min-w-[75px] md:min-w-[90px] lg:min-w-[100px]">
@@ -98,26 +105,12 @@ export function Countdown() {
         <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#C3A161]/5 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#C3A161]/5 to-transparent" />
         
-        {/* Bottom-left flower decoration */}
-        <img
-          src="/decoration/rigth-bottom-corner-flower.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 z-10 w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] opacity-90 select-none pointer-events-none scale-x-[-1]"
-        />
-        
-        {/* Bottom-right flower decoration */}
-        <img
-          src="/decoration/rigth-bottom-corner-flower.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute bottom-0 right-0 z-10 w-64 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] opacity-90 select-none pointer-events-none"
-        />
+        {/* Removed flower decorations per latest request */}
       </div>
 
       {/* Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#FFFFFF] mb-4 sm:mb-6 drop-shadow-md">
+        <h2 className="montez-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#FFFFFF] mb-4 sm:mb-6 drop-shadow-md">
           Countdown to Our Special Day
         </h2>
         
@@ -169,7 +162,7 @@ export function Countdown() {
                   fontStyle: "italic",
                   fontWeight: 300
                 }}>
-                  December
+                  {ceremonyMonth}
                 </p>
               </div>
               
@@ -179,7 +172,7 @@ export function Countdown() {
                 <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-serif font-bold text-[#C3A161] leading-none drop-shadow-lg" style={{
                   textShadow: "0 4px 20px rgba(195, 161, 97, 0.3)"
                 }}>
-                  28
+                  {ceremonyDayNumber.padStart(2, "0")}
                 </p>
                 
                 {/* Vertical divider */}
@@ -187,7 +180,7 @@ export function Countdown() {
                 
                 {/* Year - Elegant and refined */}
                 <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light text-[#FFFFFF] leading-none">
-                  2025
+                  {ceremonyYear}
                 </p>
               </div>
             </div>
@@ -203,7 +196,7 @@ export function Countdown() {
               
               {/* Time */}
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-medium text-[#C3A161] tracking-wide mb-3 sm:mb-4">
-                11:00 AM
+                {ceremonyTimeDisplay}
               </p>
               
               {/* Bottom decorative dots */}

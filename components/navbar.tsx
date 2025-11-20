@@ -79,8 +79,8 @@ export function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-700 ease-out ${
       isScrolled 
-        ? 'bg-[#751A2C] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(117,26,44,0.4)] border-b border-[#C3A161]/30' 
-        : 'bg-[#751A2C]/95 backdrop-blur-lg border-b border-[#C3A161]/20'
+        ? 'bg-[#C5A572] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(117,26,44,0.4)] border-b border-[#C3A161]/30' 
+        : 'bg-[#C5A572]/95 backdrop-blur-lg border-b border-[#C3A161]/20'
     }`}>
       {/* Elegant glow effect when scrolled */}
       {isScrolled && (
@@ -111,7 +111,7 @@ export function Navbar() {
                   />
                 </div>
                 
-                <div className="text-base sm:text-2xl md:text-3xl font-serif font-bold group-hover:text-[#C3A161] group-active:text-[#C3A161] transition-all duration-500 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] text-[#FFFFFF] group-hover:drop-shadow-[0_2px_15px_rgba(195,161,97,0.6)]">
+                <div className="montez-regular text-base sm:text-2xl md:text-3xl font-normal group-hover:text-[#C3A161] group-active:text-[#C3A161] transition-all duration-500 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] text-[#FFFFFF] group-hover:drop-shadow-[0_2px_15px_rgba(195,161,97,0.6)]">
                   {siteConfig.couple.groomNickname} & {siteConfig.couple.brideNickname}
                 </div>
                 
@@ -173,7 +173,7 @@ export function Navbar() {
               menuButtonColor="#FFFFFF"
               openMenuButtonColor="#C3A161"
               changeMenuColorOnOpen={true}
-              colors={["#751A2C", "#0A3428", "#106552", "#C3A161", "#FFFFFF"]}
+              colors={["#C5A572", "#0A3428", "#106552", "#C3A161", "#FFFFFF"]}
               accentColor="#C3A161"
               isFixed={true}
               onMenuOpen={() => {}}

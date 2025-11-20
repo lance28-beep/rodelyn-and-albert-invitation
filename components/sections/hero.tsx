@@ -9,6 +9,14 @@ const desktopImages = [
     "/desktop-background/couple (2).jpg",
     "/desktop-background/couple (3).jpg",
     "/desktop-background/couple (4).jpg",
+    "/desktop-background/couple (5).jpg",
+    "/desktop-background/couple (6).jpg",
+    "/desktop-background/couple (7).jpg",
+    "/desktop-background/couple (8).jpg",
+    "/desktop-background/couple (9).jpg",
+    "/desktop-background/couple (10).jpg",
+    "/desktop-background/couple (11).jpg",
+    "/desktop-background/couple (12).jpg",
 ]
 
 const mobileImages = [
@@ -20,21 +28,6 @@ const mobileImages = [
     "/mobile-background/couple (6).jpg",
     "/mobile-background/couple (7).jpg",
     "/mobile-background/couple (8).jpg",
-    "/mobile-background/couple (9).jpg",
-    "/mobile-background/couple (10).jpg",
-    "/mobile-background/couple (11).jpg",
-    "/mobile-background/couple (12).jpg",
-    "/mobile-background/couple (13).jpg",
-    "/mobile-background/couple (14).jpg",
-    "/mobile-background/couple (15).jpg",
-    "/mobile-background/couple (16).jpg",
-    "/mobile-background/couple (17).jpg",
-    "/mobile-background/couple (18).jpg",
-    "/mobile-background/couple (19).jpg",
-    "/mobile-background/couple (20).jpg",
-    "/mobile-background/couple (21).jpg",
-    "/mobile-background/couple (22).jpg",
-    "/mobile-background/couple (23).jpg",
 ]
 
 export function Hero() {
@@ -133,7 +126,7 @@ export function Hero() {
           {/* Warm invitation line */}
           <div className="space-y-2 sm:space-y-3 mb-2 sm:mb-4">
             <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-[#FFFFFF]/90 drop-shadow-lg tracking-wide">
-              We are delighted to invite you to celebrate our special day
+              Together with our beloved parents, we warmly invite you to witness our covenant of love
             </p>
             {/* Decorative divider with gold accent */}
             <div className="flex items-center justify-center gap-3 sm:gap-4 py-1">
@@ -148,12 +141,10 @@ export function Hero() {
           {/* Couple names - keeping the arrangement as requested */}
           <div className="space-y-3 sm:space-y-4 md:space-y-5">
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold tracking-[0.02em] sm:tracking-[0.03em] md:tracking-[0.04em] drop-shadow-2xl leading-tight"
+              className="montez-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-normal tracking-[0.02em] sm:tracking-[0.03em] md:tracking-[0.04em] drop-shadow-2xl leading-tight"
               style={{
                 color: '#FFFFFF',
                 textShadow: "0 2px 20px rgba(195, 161, 97, 0.4), 0 4px 40px rgba(10, 52, 40, 0.6), 0 8px 60px rgba(0, 0, 0, 0.5)",
-                fontFamily: "var(--font-serif)",
-                letterSpacing: "0.05em",
               }}
             >
               <span className="inline-block transform transition-all duration-700 hover:scale-105">
@@ -171,7 +162,7 @@ export function Hero() {
           {/* Tagline with improved typography */}
           <div className="space-y-3 sm:space-y-4 md:space-y-5 pt-2 sm:pt-4">
             <p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif font-light italic text-[#FFFFFF] drop-shadow-lg tracking-wide"
+              className="imperial-script-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#FFFFFF] drop-shadow-lg tracking-wide"
               style={{
                 textShadow: "0 2px 12px rgba(10, 52, 40, 0.8), 0 1px 4px rgba(0,0,0,0.7)",
               }}
@@ -200,10 +191,10 @@ export function Hero() {
             </div>
           </div>
 
-          {/* CTA Buttons - Horizontal layout on all devices */}
-          <div className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 flex flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center max-w-2xl mx-auto w-full px-2">
+            {/* CTA Buttons - Horizontal layout on all devices */}
+            <div className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 flex flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center max-w-2xl mx-auto w-full px-2">
             <a
-              href="#narrative"
+                href="#messages"
               className="group flex-1 max-w-[200px] sm:max-w-none sm:min-w-[160px] md:min-w-[180px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-2.5 sm:py-3 md:py-3.5 lg:py-4 rounded-lg sm:rounded-xl font-semibold sm:font-bold transition-all duration-500 ease-out uppercase tracking-wider text-xs sm:text-sm md:text-base whitespace-nowrap relative overflow-hidden border-2 backdrop-blur-sm"
               style={{
                 backgroundColor: "rgba(16, 101, 82, 0.95)",
@@ -231,7 +222,7 @@ export function Hero() {
               }}
             >
               <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">
-                Our Love Story
+                Send Message
                 <Heart size={12} className="w-3 h-3 sm:w-4 sm:h-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0" />
               </span>
               <div 
@@ -242,22 +233,22 @@ export function Hero() {
               href="#guest-list"
               className="group flex-1 max-w-[200px] sm:max-w-none sm:min-w-[160px] md:min-w-[180px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-2.5 sm:py-3 md:py-3.5 lg:py-4 rounded-lg sm:rounded-xl font-semibold sm:font-bold transition-all duration-500 ease-out uppercase tracking-wider text-xs sm:text-sm md:text-base whitespace-nowrap relative overflow-hidden border-2 backdrop-blur-sm"
               style={{
-                backgroundColor: "rgba(117, 26, 44, 0.95)",
+                backgroundColor: "rgba(197, 165, 114, 0.95)",
                 borderColor: "rgba(195, 161, 97, 0.4)",
                 color: "#FFFFFF",
-                boxShadow: "0 4px 20px rgba(117, 26, 44, 0.4), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
+                boxShadow: "0 4px 20px rgba(197, 165, 114, 0.4), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#751A2C";
+                e.currentTarget.style.backgroundColor = "#C5A572";
                 e.currentTarget.style.borderColor = "rgba(195, 161, 97, 0.7)";
                 e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
-                e.currentTarget.style.boxShadow = "0 8px 30px rgba(117, 26, 44, 0.6), 0 4px 12px rgba(0,0,0,0.4), 0 0 20px rgba(195, 161, 97, 0.3)";
+                e.currentTarget.style.boxShadow = "0 8px 30px rgba(197, 165, 114, 0.6), 0 4px 12px rgba(0,0,0,0.4), 0 0 20px rgba(195, 161, 97, 0.3)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(117, 26, 44, 0.95)";
+                e.currentTarget.style.backgroundColor = "rgba(197, 165, 114, 0.95)";
                 e.currentTarget.style.borderColor = "rgba(195, 161, 97, 0.4)";
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(117, 26, 44, 0.4), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(197, 165, 114, 0.4), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)";
               }}
               onMouseDown={(e) => {
                 e.currentTarget.style.transform = "translateY(-1px) scale(0.98)";

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://cassly-mark-wedding.vercel.app/sitemap.xml",
+    sitemap: "https://rodelyn-and-albert-invitation.vercel.app/sitemap.xml",
   }
 }

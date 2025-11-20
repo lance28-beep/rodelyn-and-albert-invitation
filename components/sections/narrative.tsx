@@ -26,7 +26,7 @@ export function Narrative() {
           <motion.div
             key={particle.id}
             className="absolute rounded-full"
-            style={{ background: `radial-gradient(circle at 30% 30%, #751A2C33 0%, #C3A16122 90%, #FFFFFF11 99%)` }}
+            style={{ background: `radial-gradient(circle at 30% 30%, #C5A57233 0%, #C3A16122 90%, #FFFFFF11 99%)` }}
             animate={{
               y: [0, -30, 0],
               x: [0, particle.xMove, 0],
@@ -92,17 +92,17 @@ export function Narrative() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold text-primary mb-6 md:mb-8 text-balance drop-shadow-lg tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0A3428] via-[#106552] to-[#751A2C]">Our Love Story:</span>
+          <h2 className="montez-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal text-primary mb-6 md:mb-8 text-balance drop-shadow-lg tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0A3428] via-[#106552] to-[#C5A572]">Our Love Story:</span>
           </h2>
           
           {/* Decorative flourish */}
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#C3A161]/80 to-[#751A2C]/40"></div>
+            <div className="w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#C3A161]/80 to-[#C5A572]/40"></div>
             <svg className="w-6 h-6 md:w-8 md:h-8 text-[#C3A161]/80" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
             </svg>
-            <div className="w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#C3A161]/80 to-[#751A2C]/40"></div>
+            <div className="w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#C3A161]/80 to-[#C5A572]/40"></div>
           </div>
         </motion.div>
 
@@ -121,7 +121,7 @@ export function Narrative() {
           <div className="flex justify-center">
             <div className="relative">
               {/* Enhanced glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#106552]/30 via-[#751A2C]/20 to-[#FFFFFF]/25 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#106552]/30 via-[#C5A572]/20 to-[#FFFFFF]/25 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-[#C3A161]/25 via-transparent to-[#FFFFFF]/10 rounded-full blur-2xl -z-10 w-full h-full max-w-sm"></div>
 
               <Stack
@@ -175,7 +175,7 @@ export function Narrative() {
                 {/* First paragraph with drop cap */}
                 {index === 0 ? (
                   <p className="text-sm md:text-lg leading-relaxed text-[#0A3428] text-pretty font-sans font-light pl-3 md:pl-6">
-                    <span className="float-left text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-[#751A2C] leading-none mr-2 mt-1 drop-shadow-md">
+                    <span className="float-left text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-[#C5A572] leading-none mr-2 mt-1 drop-shadow-md">
                       {paragraph.charAt(0)}
                     </span>
                     {paragraph.slice(1)}
@@ -199,18 +199,18 @@ export function Narrative() {
           >
             {/* Decorative divider */}
             <div className="flex items-center justify-center gap-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#C3A161]/60 to-[#751A2C]/30"></div>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#C3A161]/60 to-[#C5A572]/30"></div>
               <svg className="w-5 h-5 text-[#C3A161]/80" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
               </svg>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#C3A161]/60 to-[#751A2C]/30"></div>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#C3A161]/60 to-[#C5A572]/30"></div>
             </div>
 
             {/* Enhanced CTA Button */}
             <div className="flex justify-center">
               <motion.a
                 href="#guest-list"
-                className="group relative w-full sm:w-auto px-8 sm:px-12 md:px-16 py-5 sm:py-6 md:py-7 bg-gradient-to-r from-[#0A3428] via-[#106552] to-[#751A2C] text-[#FFFFFF] font-sans font-bold text-base sm:text-lg md:text-xl lg:text-2xl rounded-[2rem] transition-all duration-500 text-center overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-[#751A2C]/35 border-2 border-[#FFFFFF] hover:border-[#C3A161] hover:text-white"
+                className="group relative w-full sm:w-auto px-8 sm:px-12 md:px-16 py-5 sm:py-6 md:py-7 bg-gradient-to-r from-[#0A3428] via-[#106552] to-[#C5A572] text-[#FFFFFF] font-sans font-bold text-base sm:text-lg md:text-xl lg:text-2xl rounded-[2rem] transition-all duration-500 text-center overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-[#C5A572]/35 border-2 border-[#FFFFFF] hover:border-[#C3A161] hover:text-white"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

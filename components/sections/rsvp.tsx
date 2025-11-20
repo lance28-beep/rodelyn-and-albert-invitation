@@ -99,7 +99,7 @@ export function RSVP({ onSuccess }: RSVPFormProps) {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-[#FFF6E7] mb-4 md:mb-6 text-balance drop-shadow-lg relative overflow-visible">
+          <h2 className="montez-regular text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-normal text-[#FFF6E7] mb-4 md:mb-6 text-balance drop-shadow-lg relative overflow-visible">
             <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-br from-[#BB8A3D] via-[#CDAC77] to-[#FFF6E7]">RSVP</span>
             <span className="absolute -inset-x-3 -inset-y-4 text-[#BB8A3D]/25 blur-[28px] -z-10 select-none pointer-events-none">RSVP</span>
           </h2>

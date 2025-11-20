@@ -1,67 +1,79 @@
 export const siteConfig = {
   couple: {
-    bride: "Airez Joy Caspillo Anggalan",
-    brideNickname: "Airez",
-    groom: "Brendan Joe Grima",
-    groomNickname: "Brendan",
+    bride: "Rodelyn Ruga",
+    brideNickname: "Rhods",
+    groom: "Albert Gupit",
+    groomNickname: "Bert",
   },
   wedding: {
-    date: "December 28, 2025",
-    time: "11:00 AM",
-    venue: "SMDC Jazz Residence",
-    tagline: "are getting married!",
-    theme: "Christmas Wedding 🎄",
-    motif: "Burgundy Red & Emerald Green",
+    date: "December 8, 2025",
+    time: "10:00 AM",
+    venue: "Southern-Asia Pacific Division (SSD) Worship Hall, Silang, Cavite",
+    tagline: "In honor and gratitude to God who brought us together",
+    theme: "Emerald Green & Beige",
+    motif: "Emerald Green & Beige",
+    themeSong: {
+      title: "Handa Na – Piano Version",
+      artist: "Noah Raque",
+    },
   },
   details: {
     rsvp: {
-      deadline: "December 15, 2025",
+      deadline: "November 23, 2025",
+      email: "albertrhods25@gmail.com",
+      phone: "0917-112-9528",
     },
   },
   ceremony: {
-    location: "SMDC Jazz Residence",
-    venue: "SMDC Jazz Residence",
-    date: "December 28, 2025",
-    day: "Sunday",
-    time: "11:00 AM",
-    entourageTime: "10:00 AM",
-    guestsTime: "10:30 AM",
+    location: "Southern-Asia Pacific Division (SSD) Worship Hall, Silang, Cavite",
+    venue: "Southern-Asia Pacific Division (SSD) Worship Hall, Silang, Cavite",
+    date: "December 8, 2025",
+    day: "Monday",
+    time: "10:00 AM",
+    entourageTime: "9:00 AM",
+    guestsTime: "9:30 AM",
   },
   reception: {
-    location: "SMDC Jazz Residence",
-    venue: "SMDC Jazz Residence",
-    date: "December 28, 2025",
+    location: "SSD Lobby, Silang, Cavite",
+    venue: "SSD Lobby, Silang, Cavite",
+    date: "December 8, 2025",
     time: "12:00 NN",
   },
   dressCode: {
-    theme: "Christmas Wedding 🎄",
-    colors: ["#0A3428", "#106552", "#751A2C", "#C3A161"],
+    theme: "Emerald Green & Beige",
+    colors: ["#0A3428", "#0F573E", "#DCCBB2", "#C5A572"],
     sponsors: {
-      ladies: "White gown / long dress ",
-      gentlemen: "Black suit and tie"
+      ladies: "Filipiniana or long dresses in emerald or beige",
+      gentlemen: "Barong, suit, or long-sleeved attire in complementary tones",
     },
     guests: {
-      ladies: "Long or cocktail dress",
-      gentlemen: "Long sleeve, polo, pants or suit"
+      ladies: "Elegant dresses in muted emerald, sage, or beige",
+      gentlemen: "Dress shirts, polos, or suits in neutral or green hues",
     },
-    note: "Please avoid jeans and casual attire."
+    note: "Please avoid jeans and overly casual attire.",
   },
-  narrative: `In 2020, during the quiet days of the pandemic, fate found a way to bring two hearts together — one from Australia, and one from the Philippines. Through an online word game called Codenames, Brendan and Airez met. What started as playful teasing soon turned into long conversations, laughter, and a friendship that grew stronger with every passing day. \n
+  narrative: `In honor and gratitude to God who brought us together,
 
-For years, they were just friends — two souls connected across miles and time zones. But even through screens, something beautiful began to bloom. Their bond deepened, their connection strengthened, and before they knew it, friendship had turned into love. \n
+We,
+Albert Gupit and Rodelyn Ruga,
+Together with our beloved parents —
+Nilo Gupit & Nancy Gupit
+Delmer Sales & Rosalinda Ruga —
+Warmly request the pleasure of your company as we celebrate our simple wedding.
 
-Then came July 23, 2022 — the day they made it official in private. It was a quiet promise between two hearts who had found something rare and real — because for both Brendan and Airez, this was their first love. ❤️ \n
+On Monday, the 8th of December 2025 at 10:00 in the morning,
+the ceremony will be held at Southern-Asia Pacific Division (SSD) Worship Hall, Silang, Cavite.
 
-A few months later, on October 23, 2022, Brendan flew from Australia to the Philippines to finally meet Airez in person — and her family for the first time. That day was filled with emotions, laughter, and happy tears. It was also the day they made their relationship public, proudly sharing their love with the world after keeping it private for so long. \n
+Reception will follow at SSD Lobby, Silang, Cavite.
 
-In July 2025, their story reached a beautiful turning point. Brendan, together with his parents, returned to the Philippines to meet Airez’s family once again and proposed in front of them — a heartfelt moment that brought both families together in love and joy. \n
-
-From a simple online game to a love that grew through distance, patience, and faith — their journey is a beautiful reminder that true love knows no distance and always finds its way. \n
-
-And now, hand in hand, heart to heart, Brendan and Airez are ready to begin their forever — a lifetime of love, laughter, and endless “us.” ❤️`,
+Please create a separate email for your RSVP and send it to albertrhods25@gmail.com.
+An honor of a reply is requested on or before the 23rd of November 2025.
+You may reach us at 0917-112-9528.`,
   colors: {
     primary: "#0A3428",
-    secondary: "#106552",
+    secondary: "#0F573E",
+    accent: "#C5A572",
+    light: "#F3E7D2",
   },
 }
 

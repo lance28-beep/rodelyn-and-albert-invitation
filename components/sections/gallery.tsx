@@ -6,9 +6,9 @@ import { Section } from "@/components/section"
 // Removed circular gallery in favor of a responsive masonry layout
 
 const galleryItems = [
-  { image: "/mobile-background/couple (3).jpg", text: " " },   
-  { image: "/mobile-background/couple (18).jpg", text: " " },
-  { image: "/mobile-background/couple (22).jpg", text: " " },
+  { image: "/mobile-background/couple (1).jpg", text: " " },   
+  { image: "/mobile-background/couple (3).jpg", text: " " },
+  { image: "/mobile-background/couple (5).jpg", text: " " },
 
 
 ]
@@ -101,7 +101,7 @@ export function Gallery() {
 
       {/* Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#FFFFFF] mb-4 sm:mb-6 drop-shadow-md">
+        <h2 className="montez-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#FFFFFF] mb-4 sm:mb-6 drop-shadow-md">
           Our Moments
         </h2>
         
@@ -132,7 +132,7 @@ export function Gallery() {
                     aria-label={`Open image ${index + 1}`}
                   >
                     {/* Subtle glow on hover */}
-                    <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#751A2C]/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                    <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#C5A572]/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
                     
                     <div className="relative aspect-[3/4] md:aspect-square overflow-hidden">
                       <img
@@ -323,22 +323,22 @@ export function Gallery() {
           href="/gallery"
           className="group inline-flex items-center gap-2 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl font-semibold sm:font-bold transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm md:text-base whitespace-nowrap relative overflow-hidden border-2 backdrop-blur-sm"
           style={{
-            backgroundColor: "rgba(117, 26, 44, 0.95)",
+            backgroundColor: "rgba(197, 165, 114, 0.95)",
             borderColor: "rgba(195, 161, 97, 0.4)",
             color: "#FFFFFF",
-            boxShadow: "0 4px 20px rgba(117, 26, 44, 0.4), 0 2px 6px rgba(0,0,0,0.3)",
+            boxShadow: "0 4px 20px rgba(197, 165, 114, 0.4), 0 2px 6px rgba(0,0,0,0.3)",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#751A2C";
+            e.currentTarget.style.backgroundColor = "#C5A572";
             e.currentTarget.style.borderColor = "rgba(195, 161, 97, 0.7)";
             e.currentTarget.style.transform = "translateY(-2px)";
-            e.currentTarget.style.boxShadow = "0 8px 30px rgba(117, 26, 44, 0.6), 0 4px 12px rgba(0,0,0,0.4)";
+            e.currentTarget.style.boxShadow = "0 8px 30px rgba(197, 165, 114, 0.6), 0 4px 12px rgba(0,0,0,0.4)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(117, 26, 44, 0.95)";
+            e.currentTarget.style.backgroundColor = "rgba(197, 165, 114, 0.95)";
             e.currentTarget.style.borderColor = "rgba(195, 161, 97, 0.4)";
             e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 4px 20px rgba(117, 26, 44, 0.4), 0 2px 6px rgba(0,0,0,0.3)";
+            e.currentTarget.style.boxShadow = "0 4px 20px rgba(197, 165, 114, 0.4), 0 2px 6px rgba(0,0,0,0.3)";
           }}
         >
           <span className="relative z-10">View Full Gallery</span>

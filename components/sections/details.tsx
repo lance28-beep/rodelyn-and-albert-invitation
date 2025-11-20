@@ -2,7 +2,7 @@
 
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
-import { Clock, Utensils, Car, Shirt, Copy, Check, Navigation, Heart, MapPin } from "lucide-react"
+import { Car, Shirt, Copy, Check, Navigation, MapPin, Mail, Phone, Music2 } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -26,11 +26,13 @@ export function Details() {
   }
 
   // Updated venue information
-  const venueName = "SMDC Jazz Residence"
-  const venueAddress = "Nicanor Garcia, Tower B, 41st floor and unit 4112, Makati, Manila, Philippines, 1209"
-  const venue = `${venueName}, ${venueAddress}`
+  const ceremonyVenueName = siteConfig.ceremony.venue
+  const ceremonyVenueAddress = "SSD Compound, Silang, Cavite"
+  const receptionVenueName = siteConfig.reception.venue
+  const receptionVenueAddress = "SSD Compound, Silang, Cavite"
+  const venue = `${ceremonyVenueName}, ${ceremonyVenueAddress}`
   const ceremonyMapsLink = `https://maps.google.com/?q=${encodeURIComponent(venue)}`
-  const receptionMapsLink = ceremonyMapsLink
+  const receptionMapsLink = `https://maps.google.com/?q=${encodeURIComponent(`${receptionVenueName}, ${receptionVenueAddress}`)}`
 
   const openInMaps = (link: string) => {
     window.open(link, '_blank', 'noopener,noreferrer')
@@ -47,8 +49,8 @@ export function Details() {
       </div>
 
       {/* Header */}
-      <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-3 sm:px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-[#FFFFFF] mb-3 sm:mb-4 md:mb-6 drop-shadow-md">
+        <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-3 sm:px-4">
+          <h2 className="montez-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] font-normal text-[#FFFFFF] mb-3 sm:mb-4 md:mb-6 drop-shadow-[0_10px_35px_rgba(0,0,0,0.45)] leading-snug">
           Event Details
         </h2>
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#FFFFFF]/90 font-light max-w-xl mx-auto leading-relaxed px-2">
@@ -62,13 +64,13 @@ export function Details() {
           className="relative bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-[#C3A161]/30 shadow-lg hover:shadow-xl hover:border-[#C3A161]/50 transition-all duration-300 group"
         >
           {/* Subtle glow on hover */}
-          <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#751A2C]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+          <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#C5A572]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
           
           {/* Venue Image */}
           <div className="relative w-full h-44 sm:h-52 md:h-60 lg:h-64 xl:h-72 overflow-hidden">
             <Image
-              src="/Details/JazzResidence.png"
-              alt="SMDC Jazz Residence"
+              src="/Details/SouthernAsiaPacificDivision.png"
+              alt="Southern-Asia Pacific Division (SSD) Worship Hall"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
@@ -79,10 +81,10 @@ export function Details() {
             {/* Venue name overlay */}
             <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 md:bottom-6 md:left-6 right-3 sm:right-4 md:right-6">
               <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-0.5 sm:mb-1 drop-shadow-lg leading-tight">
-                SMDC Jazz Residence
+                SSD Worship Hall
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-white/90 drop-shadow-md">
-                Makati, Manila
+                Silang, Cavite
               </p>
             </div>
           </div>
@@ -91,45 +93,36 @@ export function Details() {
           <div className="p-4 sm:p-5 md:p-6 lg:p-8 relative z-10">
             {/* Date */}
             <div className="text-center mb-5 sm:mb-6 md:mb-8">
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-[#0A3428] mb-3 sm:mb-4 md:mb-6">
-                December 28, 2025
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-[#0A3428] mb-2">
+                {siteConfig.ceremony.date} • {siteConfig.ceremony.day}
               </p>
               
               {/* Ceremony and Reception Times */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                {/* Ceremony */}
-                <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 md:p-5 border border-[#C3A161]/30">
-                  <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-2">
-                    <Heart className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#751A2C] flex-shrink-0" fill="currentColor" />
-                    <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428]">Ceremony</h4>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 sm:gap-2">
-                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#751A2C] flex-shrink-0" />
-                    <p className="text-base sm:text-lg md:text-xl font-bold text-[#0A3428]">11:00 AM</p>
-                  </div>
-                </div>
-
-                {/* Reception */}
-                <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 md:p-5 border border-[#C3A161]/30">
-                  <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-2">
-                    <Utensils className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#751A2C] flex-shrink-0" />
-                    <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428]">Reception</h4>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 sm:gap-2">
-                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#751A2C] flex-shrink-0" />
-                    <p className="text-base sm:text-lg md:text-xl font-bold text-[#0A3428]">12:00 NN</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-sm sm:text-base md:text-lg text-[#0A3428]/80">
+                Ceremony: {siteConfig.ceremony.time}
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-[#0A3428]/80">
+                Reception: {siteConfig.reception.time}
+              </p>
             </div>
 
             {/* Venue Details */}
-            <div className="flex items-start gap-2 sm:gap-3 mb-5 sm:mb-6 md:mb-8 p-3 sm:p-4 bg-[#0A3428]/5 rounded-lg border border-[#C3A161]/20">
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#751A2C] mt-0.5 flex-shrink-0" />
-              <div className="min-w-0 flex-1">
-                <p className="text-xs sm:text-sm md:text-base font-semibold text-[#0A3428] mb-1">Location</p>
-                <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/80 break-words">{venueName}</p>
-                <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/80 break-words mt-1">{venueAddress}</p>
+            <div className="space-y-3 mb-5 sm:mb-6 md:mb-8">
+              <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-[#0A3428]/5 rounded-lg border border-[#C3A161]/20">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#C5A572] mt-0.5 flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1 tracking-wide">Ceremony</p>
+                  <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/80 break-words">{ceremonyVenueName}</p>
+                  <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/80 break-words mt-1">{ceremonyVenueAddress}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-[#0A3428]/5 rounded-lg border border-[#C3A161]/20">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#C5A572] mt-0.5 flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1 tracking-wide">Reception</p>
+                  <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/80 break-words">{receptionVenueName}</p>
+                  <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/80 break-words mt-1">{receptionVenueAddress}</p>
+                </div>
               </div>
             </div>
 
@@ -171,12 +164,12 @@ export function Details() {
           {/* Dress Code */}
           <div className="bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 border border-[#C3A161]/30 shadow-lg hover:shadow-xl hover:border-[#C3A161]/50 transition-all duration-300 group overflow-hidden">
             {/* Subtle glow on hover */}
-            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#751A2C]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#C5A572]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
             
             <div className="relative z-10">
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                <div className="bg-[#751A2C]/10 p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl flex-shrink-0">
-                  <Shirt className="text-[#751A2C] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                <div className="bg-[#C5A572]/10 p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl flex-shrink-0">
+                  <Shirt className="text-[#C5A572] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 </div>
                 <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A3428]">Dress Code</h4>
               </div>
@@ -185,13 +178,13 @@ export function Details() {
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Principal Sponsors</p>
                   <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    We encourage wearing Barong or Filipiniana to honor our celebration.
+                    Kindly wear Filipiniana, Barong, or long formal attire in emerald green or beige accents.
                   </p>
                 </div>
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Guests</p>
                   <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    We encourage formal or casual attire so you can celebrate comfortably with us.
+                    Semi-formal silhouettes in muted emerald, sage, champagne, or beige are highly appreciated.
                   </p>
                 </div>
 
@@ -199,7 +192,7 @@ export function Details() {
                 <div>
                   <p className="text-xs sm:text-sm font-semibold text-[#0A3428] mb-2 sm:mb-3">Wedding Colors</p>
                   <div className="flex gap-2 sm:gap-3 flex-wrap">
-                    {['#0A3428', '#106552', '#751A2C', '#C3A161'].map((color, index) => (
+                    {siteConfig.dressCode.colors.map((color, index) => (
                       <div
                         key={index}
                         className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-md border-2 border-white"
@@ -216,12 +209,12 @@ export function Details() {
           {/* Parking & Travel */}
           <div className="bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 border border-[#C3A161]/30 shadow-lg hover:shadow-xl hover:border-[#C3A161]/50 transition-all duration-300 group overflow-hidden">
             {/* Subtle glow on hover */}
-            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#751A2C]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C3A161]/20 to-[#C5A572]/10 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
             
             <div className="relative z-10">
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                <div className="bg-[#751A2C]/10 p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl flex-shrink-0">
-                  <Car className="text-[#751A2C] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                <div className="bg-[#C5A572]/10 p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl flex-shrink-0">
+                  <Car className="text-[#C5A572] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 </div>
                 <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A3428]">Parking & Travel</h4>
               </div>
@@ -230,14 +223,14 @@ export function Details() {
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-xs sm:text-sm md:text-base font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Parking Available</p>
                   <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    Ample parking is available at the venue. We recommend arriving 15-20 minutes early.
+                    The SSD compound offers secure parking spaces. Kindly arrive 15–20 minutes early to settle in reverently.
                   </p>
                 </div>
 
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-xs sm:text-sm md:text-base font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Transportation</p>
                   <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    Taxis, Grab, and private vehicles are welcome. The venue is easily accessible.
+                    Private vehicles, carpooling, and booked rides are welcome. Kindly pin “SSD Worship Hall, Silang, Cavite” on your navigation apps.
                   </p>
                 </div>
               </div>
@@ -245,6 +238,7 @@ export function Details() {
           </div>
         </div>
       </div>
+
     </Section>
   )
 }

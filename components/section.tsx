@@ -18,7 +18,9 @@ export function Section({ id, title, subtitle, children, className = "", bgColor
         {(title || subtitle) && (
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             {title && (
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-3 sm:mb-4 md:mb-6 text-balance">{title}</h2>
+              <h2 className="montez-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-primary mb-3 sm:mb-4 md:mb-6 text-balance">
+                {title}
+              </h2>
             )}
             {subtitle && <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto text-pretty px-4">{subtitle}</p>}
           </div>
