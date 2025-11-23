@@ -15,11 +15,11 @@ const ROLE_CATEGORY_ORDER = [
   "The Couple",
   "Parents of the Groom",
   "Parents of the Bride",
-  "Best Man",
-  "Maid/Matron of Honor",
   "Candle Sponsors",
   "Veil Sponsors",
   "Cord Sponsors",
+  "Best Man",
+  "Matron of Honor",
   "Groomsmen",
   "Bridesmaids",
   "Flower Girls",
@@ -115,7 +115,7 @@ export function Entourage() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <div className={`flex flex-col ${containerAlign} justify-center py-2 sm:py-2.5 md:py-3 leading-relaxed group/item transition-all duration-200 hover:scale-[1.02]`}>
-        <p className={`text-[#0A3428] text-[13px] sm:text-sm md:text-base lg:text-lg font-semibold ${textAlign} group-hover/item:text-[#106552] transition-colors duration-200`}>
+        <p className={`imperial-script-regular text-[#0A3428] text-base sm:text-lg md:text-xl lg:text-2xl ${textAlign} group-hover/item:text-[#106552] transition-colors duration-200`}>
           {member.Name}
         </p>
         {showRole && member.RoleTitle && (
@@ -327,51 +327,29 @@ export function Entourage() {
                   return null
                 }
 
-                // Special handling for Maid/Matron of Honor and Best Man - combine into single two-column layout
-                if (category === "Maid/Matron of Honor" || category === "Best Man") {
-                  // Get both honor attendant groups
-                  const maidOfHonor = grouped["Maid/Matron of Honor"] || []
-                  const bestMan = grouped["Best Man"] || []
-                  
-                  // Only render once (when processing "Best Man")
-                  if (category === "Best Man") {
-                    return (
-                      <div key="HonorAttendants">
-                        {categoryIndex > 0 && (
-                          <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
-                            <div className="flex items-center gap-2 w-full max-w-md">
-                              <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
-                              <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
-                              <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
-                            </div>
+                // Special handling for Best Man and Maid/Matron of Honor - display as separate vertical sections
+                if (category === "Best Man" || category === "Maid/Matron of Honor") {
+                  return (
+                    <div key={category}>
+                      {categoryIndex > 0 && (
+                        <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                          <div className="flex items-center gap-2 w-full max-w-md">
+                            <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                            <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                            <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
                           </div>
-                        )}
-                        <TwoColumnLayout leftTitle="Best Man" rightTitle="Maid/Matron of Honor">
-                          {(() => {
-                            const maxLen = Math.max(bestMan.length, maidOfHonor.length)
-                            const rows = []
-                            for (let i = 0; i < maxLen; i++) {
-                              const left = bestMan[i]
-                              const right = maidOfHonor[i]
-                              rows.push(
-                                <React.Fragment key={`honor-row-${i}`}>
-                                  <div key={`bestman-cell-${i}`} className="px-3 sm:px-4 md:px-6">
-                                    {left ? <NameItem member={left} align="right" /> : <div className="py-1 sm:py-1.5 md:py-2" />}
-                                  </div>
-                                  <div key={`maid-cell-${i}`} className="px-3 sm:px-4 md:px-6">
-                                    {right ? <NameItem member={right} align="left" /> : <div className="py-1 sm:py-1.5 md:py-2" />}
-                                  </div>
-                                </React.Fragment>
-                              )
-                            }
-                            return rows
-                          })()}
-                        </TwoColumnLayout>
+                        </div>
+                      )}
+                      <div className="mb-5 sm:mb-7 md:mb-9 lg:mb-12">
+                        <SectionTitle>{category}</SectionTitle>
+                        <div className="max-w-sm mx-auto flex flex-col items-center gap-2 sm:gap-2.5">
+                          {members.map((member, idx) => (
+                            <NameItem key={`${category}-${idx}-${member.Name}`} member={member} align="center" />
+                          ))}
+                        </div>
                       </div>
-                    )
-                  }
-                  // Skip rendering for "Maid/Matron of Honor" since it's already rendered above
-                  return null
+                    </div>
+                  )
                 }
 
                 // Special handling for Bridesmaids and Groomsmen - combine into single two-column layout
@@ -484,7 +462,7 @@ export function Entourage() {
                       {(() => {
                         const SINGLE_COLUMN_SECTIONS = new Set([
                           "Best Man",
-                          "Maid/Matron of Honor",
+                          "Matron of Honor",
                           "Ring Bearer",
                           "Coin Bearer",
                           "Bible Bearer",

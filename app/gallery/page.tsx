@@ -74,7 +74,7 @@ export default async function GalleryPage() {
                 #EmeraldPromise2025
               </span>
               <span className="px-4 py-2 bg-[#C3A161]/20 border border-[#C3A161]/40 rounded-full text-[#C3A161] font-sans font-medium text-sm sm:text-base">
-                #BertAndRhods
+              #BertRhodstoforever
               </span>
             </div>
             <Link

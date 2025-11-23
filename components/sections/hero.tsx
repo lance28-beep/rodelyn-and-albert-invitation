@@ -15,8 +15,6 @@ const desktopImages = [
     "/desktop-background/couple (8).jpg",
     "/desktop-background/couple (9).jpg",
     "/desktop-background/couple (10).jpg",
-    "/desktop-background/couple (11).jpg",
-    "/desktop-background/couple (12).jpg",
 ]
 
 const mobileImages = [
@@ -27,7 +25,6 @@ const mobileImages = [
     "/mobile-background/couple (5).jpg",
     "/mobile-background/couple (6).jpg",
     "/mobile-background/couple (7).jpg",
-    "/mobile-background/couple (8).jpg",
 ]
 
 export function Hero() {

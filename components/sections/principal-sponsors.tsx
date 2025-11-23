@@ -161,6 +161,32 @@ export function PrincipalSponsors() {
                   </div>
                 </div>
               )}
+
+              {/* Junior Sponsors Section */}
+              <div className="relative">
+                {/* Divider */}
+                <div className="flex justify-center py-3 sm:py-4 md:py-5 mb-5 sm:mb-6 md:mb-8">
+                  <div className="flex items-center gap-2 w-full max-w-md">
+                    <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                    <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
+                    <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
+                  </div>
+                </div>
+
+                {/* Junior Sponsors Title */}
+                <SectionTitle>Junior Sponsors</SectionTitle>
+
+                {/* Junior Sponsors List */}
+                <div className="max-w-sm mx-auto flex flex-col items-center gap-2 sm:gap-2.5">
+                  <NameItem name="Mr. Zernan Diaz" align="center" />
+                  <NameItem name="Mrs. Jazel May Diaz" align="center" />
+                  <NameItem name="Pastor Junas Carreon" align="center" />
+                  <NameItem name="Dr. Zipporah Morales-Carreon" align="center" />
+                  <NameItem name="Mr. Jojo Aguba" align="center" />
+                  <NameItem name="Mr. Raul Carrera Jr." align="center" />
+                  <NameItem name="Ms. Melody Montalbo" align="center" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

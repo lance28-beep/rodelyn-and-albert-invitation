@@ -177,29 +177,35 @@ export function Details() {
               <div className="space-y-3 sm:space-y-4">
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Principal Sponsors</p>
-                  <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    Kindly wear Filipiniana, Barong, or long formal attire in emerald green or beige accents.
+                  <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed mb-2">
+                    Barong for Ninongs; Filipiniana or formal attire in cream or beige accents for Ninangs
                   </p>
+                  {/* Sponsor Color Palette - Beige & Cream */}
+                  <div className="mt-2">
+                    <p className="text-[10px] sm:text-xs font-medium text-[#0A3428]/70 mb-1.5">Color Palette:</p>
+                    <div className="flex gap-1.5 sm:gap-2">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#F5F5DC' }} title="Beige"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#FFFDD0' }} title="Cream"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#F5DEB3' }} title="Wheat"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#FFE4C4' }} title="Bisque"></div>
+                    </div>
+                  </div>
                 </div>
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-sm sm:text-base md:text-lg font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Guests</p>
-                  <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    Semi-formal silhouettes in muted emerald, sage, champagne, or beige are highly appreciated.
+                  <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed mb-2">
+                    Semi-formal silhouettes in shades of green are highly appreciated.
                   </p>
-                </div>
-
-                {/* Color Palette */}
-                <div>
-                  <p className="text-xs sm:text-sm font-semibold text-[#0A3428] mb-2 sm:mb-3">Wedding Colors</p>
-                  <div className="flex gap-2 sm:gap-3 flex-wrap">
-                    {siteConfig.dressCode.colors.map((color, index) => (
-                      <div
-                        key={index}
-                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-md border-2 border-white"
-                        style={{ backgroundColor: color }}
-                        title={color}
-                      />
-                    ))}
+                  {/* Guest Color Palette - Shades of Green */}
+                  <div className="mt-2">
+                    <p className="text-[10px] sm:text-xs font-medium text-[#0A3428]/70 mb-1.5">Color Palette:</p>
+                    <div className="flex gap-1.5 sm:gap-2">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#0A3428' }} title="Dark Green"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#106552' }} title="Emerald"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#8FBC8F' }} title="Sage Green"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#90EE90' }} title="Light Green"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#98FB98' }} title="Pale Green"></div>
+                    </div>
                   </div>
                 </div>
               </div>
