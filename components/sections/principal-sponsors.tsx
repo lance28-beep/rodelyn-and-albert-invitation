@@ -9,43 +9,44 @@ interface PrincipalSponsor {
   FemalePrincipalSponsor: string
 }
 
-const SectionTitle = ({
-  children,
-  align = "center",
-  className = "",
-}: {
-  children: React.ReactNode
-  align?: "left" | "center" | "right"
-  className?: string
-}) => {
-  const textAlign =
-    align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
-  return (
-    <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase text-[#0A3428] mb-2 sm:mb-3 md:mb-4 tracking-[0.1em] ${textAlign} ${className} drop-shadow-sm`}>
-      {children}
-    </h3>
-  )
-}
+  const SectionTitle = ({
+    children,
+    align = "center",
+    className = "",
+  }: {
+    children: React.ReactNode
+    align?: "left" | "center" | "right"
+    className?: string
+  }) => {
+    const textAlign =
+      align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
+    return (
+      <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase text-[#0A3428] mb-2 sm:mb-3 md:mb-4 tracking-[0.1em] ${textAlign} ${className} drop-shadow-sm`}>
+        {children}
+      </h3>
+    )
+  }
 
-const NameItem = ({ name, align = "center" }: { name: string, align?: "left" | "center" | "right" }) => {
-  const containerAlign =
-    align === "right" ? "items-end" : align === "left" ? "items-start" : "items-center"
-  const textAlign =
-    align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
-  return (
+  const NameItem = ({ name, align = "center" }: { name: string, align?: "left" | "center" | "right" }) => {
+    const containerAlign =
+      align === "right" ? "items-end" : align === "left" ? "items-start" : "items-center"
+    const textAlign =
+      align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
+    return (
     <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2.5 md:py-3 w-full group/item transition-all duration-200 hover:scale-[1.015]`}>
       <p className={`imperial-script-regular text-[#0A3428] text-[1.05rem] sm:text-lg md:text-xl lg:text-[1.5rem] leading-tight break-words ${textAlign} group-hover/item:text-[#106552] transition-colors duration-200`}>
         {name}
       </p>
-    </div>
-  )
-}
+      </div>
+    )
+  }
 
-const JUNIOR_SPONSORS = [
-  "Mr. Zernan Diaz",
-  "Mrs. Jazel May Diaz",
-  "Pastor Junas Carreon",
-  "Dr. Zipporah Morales-Carreon",
+const JUNIOR_SPONSOR_PAIRS: [string, string][] = [
+  ["Mr. Zernan Diaz", "Mrs. Jazel May Diaz"],
+  ["Pastor Junas Carreon", "Dr. Zipporah Morales-Carreon"],
+]
+
+const JUNIOR_SPONSOR_SINGLE = [
   "Mr. Jojo Aguba",
   "Mr. Raul Carrera Jr.",
   "Ms. Melody Montalbo",
@@ -205,8 +206,22 @@ export function JuniorSponsors() {
           <div className="absolute bottom-0 right-0 w-14 sm:w-20 md:w-24 h-14 sm:h-20 md:h-24 border-b-2 border-r-2 border-[#C3A161]/30 rounded-br-lg sm:rounded-br-xl md:rounded-br-2xl" />
 
           <div className="relative p-3 sm:p-6 md:p-8 lg:p-10 xl:p-12 z-10">
+            <div className="mb-4 sm:mb-6 md:mb-8">
+              <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2 md:gap-y-3 items-stretch">
+                {JUNIOR_SPONSOR_PAIRS.map(([left, right], idx) => (
+                  <React.Fragment key={`junior-row-${idx}`}>
+                    <div className="px-3 sm:px-4 md:px-6">
+                      <NameItem name={left} align="right" />
+                    </div>
+                    <div className="px-3 sm:px-4 md:px-6">
+                      <NameItem name={right} align="left" />
+                    </div>
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
             <div className="max-w-sm mx-auto flex flex-col items-center gap-1.5 sm:gap-2.5">
-              {JUNIOR_SPONSORS.map((name) => (
+              {JUNIOR_SPONSOR_SINGLE.map((name) => (
                 <div key={name} className="w-full px-3 sm:px-4 md:px-6">
                   <NameItem name={name} align="center" />
                 </div>

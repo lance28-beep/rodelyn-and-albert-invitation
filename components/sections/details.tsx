@@ -203,7 +203,7 @@ export function Details() {
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#0A3428' }} title="Dark Green"></div>
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#106552' }} title="Emerald"></div>
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full shadow-md border-2 border-white" style={{ backgroundColor: '#8FBC8F' }} title="Sage Green"></div>
-                    </div>
+                </div>
                   </div>
                 </div>
               </div>
