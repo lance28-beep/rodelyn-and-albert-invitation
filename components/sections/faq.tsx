@@ -13,7 +13,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What is the dress code?",
     answer:
-      "Principal Sponsors: Filipiniana, Barong, or long formal attire in emerald or beige is highly appreciated.\n\nGuests: Kindly come in semi-formal looks in muted emerald, sage, champagne, or beige hues.",
+      "Principal Sponsors: Barong for Ninongs; Filipiniana or formal attire in cream or beige accents for Ninangs.\n\nGuests: Kindly come in semi-formal silhouettes in sophisticated shades of green.",
   },
   {
     question: "When and where is the ceremony?",
@@ -28,7 +28,7 @@ const faqItems: FAQItem[] = [
   {
     question: "When is the RSVP deadline?",
     answer:
-      "Kindly send a dedicated email RSVP to albertrhods25@gmail.com on or before November 23, 2025. Your response helps us finalize our guest list. Thank you! [RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
+      "Kindly send a dedicated email RSVP to albertrhods25@gmail.com on or before November 30, 2025. Your response helps us finalize our guest list. Thank you! [RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
   },
   {
     question: "Do you have a gift registry?",
@@ -48,7 +48,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What if I have dietary restrictions or allergies?",
     answer:
-      "Please mention any dietary restrictions, allergies, or special meal requirements in the message field when you submit your RSVP.",
+      "Please mention any dietary restrictions, allergies, or special meal requirements in the message field when you submit your RSVP. Our wedding reception will feature a fully vegetarian menu, so let us know if you require additional accommodations.",
   },
   {
     question: "Can I take photos during the ceremony?",

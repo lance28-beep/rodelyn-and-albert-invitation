@@ -8,7 +8,7 @@ import { Gallery } from "@/components/sections/gallery"
 import { Messages } from "@/components/sections/messages"
 import { Details } from "@/components/sections/details"
 import { Entourage } from "@/components/sections/entourage"
-import { PrincipalSponsors } from "@/components/sections/principal-sponsors"
+import { PrincipalSponsors, JuniorSponsors } from "@/components/sections/principal-sponsors"
 import { BookOfGuests } from "@/components/sections/book-of-guests"
 import { Registry } from "@/components/sections/registry"
 import { FAQ } from "@/components/sections/faq"
@@ -43,6 +43,7 @@ export default function Home() {
         <Details />
         <Entourage />
         <PrincipalSponsors />
+        <JuniorSponsors />
         <GuestList />
         <BookOfGuests />
         <Registry />

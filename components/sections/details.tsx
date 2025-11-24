@@ -234,7 +234,7 @@ export function Details() {
                 <div className="bg-[#C3A161]/10 rounded-lg p-3 sm:p-4 border border-[#C3A161]/30">
                   <p className="text-xs sm:text-sm md:text-base font-semibold text-[#0A3428] mb-1.5 sm:mb-2">Transportation</p>
                   <p className="text-xs sm:text-sm text-[#0A3428]/80 leading-relaxed">
-                    Private vehicles, carpooling, and booked rides are welcome. Kindly pin “SSD Worship Hall, Silang, Cavite” on your navigation apps.
+                    Private vehicles, carpooling, and booked rides are welcome. Kindly pin “Southern-Asia Pacific Division, Silang, Cavite” on your navigation apps.
                   </p>
                 </div>
               </div>
