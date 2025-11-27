@@ -36,6 +36,7 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
 
   if (loading) {
     return (
+      
       <div className="space-y-4 sm:space-y-6">
         {[1, 2, 3].map((i) => (
           <Card key={i} className="border border-[#C5A572]/25 shadow-lg bg-white/90 backdrop-blur-sm">

@@ -428,7 +428,7 @@ export function GuestList() {
                       </h3>
                     </div>
                     <p className="text-white/95 text-sm sm:text-base md:text-lg font-sans leading-tight sm:leading-normal">
-                      Hello <span className="font-extrabold text-[#FFFFFF] drop-shadow-[0_1px_6px_rgba(102,105,86,0.55)]">{selectedGuest?.Name}</span>!
+                      Hello, <span className="font-extrabold text-[#FFFFFF] drop-shadow-[0_1px_6px_rgba(102,105,86,0.55)]">{selectedGuest?.Name}</span>, we cordially invite you to our simple wedding. Please respond until November 30, 2025.
                     </p>
                   </div>
                   {!hasResponded && (
