@@ -1,12 +1,26 @@
 "use client"
 
 import { Section } from "@/components/section"
-import { Heart, ChevronDown, ChevronUp } from "lucide-react"
+import { Heart, ChevronDown, ChevronUp, Copy, Check } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 
 export function Registry() {
   const [showQRCode, setShowQRCode] = useState(false)
+  const [copiedField, setCopiedField] = useState<string | null>(null)
+
+  // Helper to copy only the numeric value while giving subtle visual feedback
+  const handleCopy = async (value: string, key: string) => {
+    try {
+      if (typeof navigator !== "undefined" && navigator.clipboard) {
+        await navigator.clipboard.writeText(value)
+        setCopiedField(key)
+        setTimeout(() => setCopiedField((current) => (current === key ? null : current)), 2000)
+      }
+    } catch {
+      // Fail silently – copying is a convenience, not critical logic
+    }
+  }
   
   return (
     <Section id="registry" className="relative bg-gradient-to-b from-[#0A3428] via-[#106552]/90 to-[#0A3428] py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
@@ -82,9 +96,9 @@ export function Registry() {
               <button
                 onClick={() => setShowQRCode(!showQRCode)}
                 className="flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#0A3428] to-[#106552] hover:from-[#106552] hover:to-[#0A3428] text-white rounded-lg sm:rounded-xl font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl group mt-1 sm:mt-2"
-                aria-label={showQRCode ? "Hide QR Code" : "Show QR Code"}
+                aria-label={showQRCode ? "Hide gift QR codes" : "Show gift QR codes"}
               >
-                <span>{showQRCode ? "Hide" : "View"} GCash QR Code</span>
+                <span>{showQRCode ? "Hide" : "View"} Gift QR Codes</span>
                 {showQRCode ? (
                   <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 flex-shrink-0" />
                 ) : (
@@ -94,55 +108,166 @@ export function Registry() {
               
               {/* QR Code Section - Animated */}
               <div
-                className={`overflow-hidden transition-all duration-700 ease-in-out ${
+                className={`w-full overflow-hidden transition-all duration-700 ease-in-out ${
                   showQRCode
-                    ? "max-h-[900px] opacity-100"
+                    ? "max-h-[1400px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 pt-4 sm:pt-6 md:pt-8">
+                <div className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8 pt-4 sm:pt-6 md:pt-8">
                   {/* Decorative divider */}
                   <div className="flex items-center gap-2 w-full max-w-md">
                     <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
                     <div className="w-1.5 h-1.5 bg-[#C3A161] rounded-full"></div>
                     <div className="h-[1.5px] flex-1 bg-gradient-to-l from-transparent via-[#C3A161]/50 to-[#C3A161]"></div>
                   </div>
-                  
-                  {/* GCash Label */}
-                  <div className="text-center space-y-0.5 sm:space-y-1">
-                    <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold text-[#0A3428] mb-0.5 sm:mb-1">
-                      GCash
-                    </h4>
-                    <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/70 font-sans">
-                      Scan to send your gift
-                    </p>
-                  </div>
-                  
-                  {/* QR Code Image */}
-                  <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4 lg:p-5 shadow-xl border-2 border-[#C3A161]/40 hover:border-[#C3A161]/70 transition-all duration-500 hover:shadow-2xl group/qr">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src="/QR/gcash2.png"
-                        alt="GCash QR Code - Scan to send monetary gift"
-                        fill
-                        className="object-contain rounded-lg group-hover/qr:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
-                        priority
-                      />
+
+                  {/* Helper text */}
+                  <p className="text-[10px] sm:text-xs md:text-sm text-[#0A3428]/70 font-sans text-center px-4">
+                    Each QR has its own card in a single column. You can scan the code or tap the copy buttons to copy only the numbers.
+                  </p>
+
+                  {/* One-column stack of QR cards */}
+                  <div className="w-full max-w-md space-y-4 sm:space-y-5 md:space-y-6">
+                    {/* GCash QR Card */}
+                    <div className="bg-white/95 rounded-xl sm:rounded-2xl border border-[#C3A161]/40 shadow-md hover:shadow-lg transition-all duration-300 p-4 sm:p-5 md:p-6">
+                      <div className="flex flex-col items-center gap-3 sm:gap-4">
+                        <div className="text-center space-y-0.5 sm:space-y-1">
+                          <h4 className="text-lg sm:text-xl md:text-2xl font-sans font-semibold tracking-wide text-[#0A3428]">
+                            GCash
+                          </h4>
+                          <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/70 font-sans">
+                            Scan to send your gift
+                          </p>
+                        </div>
+
+                        <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4 shadow-xl border-2 border-[#C3A161]/40 hover:border-[#C3A161]/70 transition-all duration-500 hover:shadow-2xl group/qr-gcash">
+                          <div className="relative w-full h-full">
+                            <Image
+                              src="/QR/gcash2.png"
+                              alt="GCash QR Code - Scan to send monetary gift"
+                              fill
+                              className="object-contain rounded-lg group-hover/qr-gcash:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 240px"
+                              priority
+                            />
+                          </div>
+                          <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#C3A161]/0 via-[#C3A161]/10 to-[#C3A161]/0 opacity-0 group-hover/qr-gcash:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        </div>
+
+                        {/* GCash details with copyable number */}
+                        <div className="w-full space-y-1.5 sm:space-y-2">
+                          <p className="text-xs sm:text-sm text-[#0A3428]/70 text-center">
+                            GCash Account: <span className="font-semibold text-[#0A3428]">Rodelyn Ruga</span>
+                          </p>
+                          <div className="flex items-center justify-between gap-2 rounded-lg border border-[#C3A161]/30 bg-[#FDF9F1] px-3 py-2">
+                            <span className="text-[11px] sm:text-xs md:text-sm text-[#0A3428]/80">
+                              GCash No.
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs sm:text-sm md:text-base font-semibold tracking-wide text-[#0A3428]">
+                                09272384703
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => handleCopy("09272384703", "gcash-number")}
+                                className="inline-flex items-center justify-center rounded-md border border-[#C3A161]/40 bg-white px-2 py-1 text-[10px] sm:text-xs text-[#0A3428] hover:bg-[#FFF7E6] hover:border-[#C3A161]/70 transition-colors"
+                                aria-label="Copy GCash number"
+                              >
+                                {copiedField === "gcash-number" ? (
+                                  <>
+                                    <Check className="w-3 h-3 mr-1 text-emerald-600" />
+                                    Copied
+                                  </>
+                                ) : (
+                                  <>
+                                    <Copy className="w-3 h-3 mr-1" />
+                                    Copy
+                                  </>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p className="text-[10px] sm:text-xs md:text-sm text-[#0A3428]/70 font-sans text-center pt-1">
+                          Open GCash → Scan QR → Confirm details → Enter amount
+                        </p>
+                      </div>
                     </div>
-                    {/* Subtle glow effect */}
-                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#C3A161]/0 via-[#C3A161]/10 to-[#C3A161]/0 opacity-0 group-hover/qr:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                  </div>
-                  
-                  {/* Instructions */}
-                  <div className="text-center space-y-2 sm:space-y-3 pt-1 sm:pt-2">
-                    <p className="text-[10px] sm:text-xs md:text-sm text-[#0A3428]/70 font-sans">
-                      Open GCash app → Scan QR → Enter amount
-                    </p>
-                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base text-[#C5A572]">
-                      <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-current flex-shrink-0" />
-                      <span className="font-sans">Thank you for your generosity</span>
+
+                    {/* PNB QR Card */}
+                    <div className="bg-white/95 rounded-xl sm:rounded-2xl border border-[#C3A161]/40 shadow-md hover:shadow-lg transition-all duration-300 p-4 sm:p-5 md:p-6">
+                      <div className="flex flex-col items-center gap-3 sm:gap-4">
+                        <div className="text-center space-y-0.5 sm:space-y-1">
+                          <h4 className="text-lg sm:text-xl md:text-2xl font-sans font-semibold tracking-wide text-[#0A3428]">
+                            PNB Bank Transfer
+                          </h4>
+                          <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/70 font-sans">
+                            For direct bank deposits
+                          </p>
+                        </div>
+
+                        <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4 shadow-xl border-2 border-[#C3A161]/40 hover:border-[#C3A161]/70 transition-all duration-500 hover:shadow-2xl group/qr-pnb">
+                          <div className="relative w-full h-full">
+                            <Image
+                              src="/QR/PNB.png"
+                              alt="PNB QR Code - Scan to send monetary gift"
+                              fill
+                              className="object-contain rounded-lg group-hover/qr-pnb:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 240px"
+                            />
+                          </div>
+                          <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#C3A161]/0 via-[#C3A161]/10 to-[#C3A161]/0 opacity-0 group-hover/qr-pnb:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        </div>
+
+                        {/* PNB details with copyable account number */}
+                        <div className="w-full space-y-1.5 sm:space-y-2">
+                          <p className="text-xs sm:text-sm text-[#0A3428]/70 text-center">
+                            Account Name: <span className="font-semibold text-[#0A3428]">Rodelyn Ruga</span>
+                          </p>
+                          <div className="flex items-center justify-between gap-2 rounded-lg border border-[#C3A161]/30 bg-[#FDF9F1] px-3 py-2">
+                            <span className="text-[11px] sm:text-xs md:text-sm text-[#0A3428]/80">
+                              PNB Account No.
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs sm:text-sm md:text-base font-semibold tracking-wide text-[#0A3428]">
+                                243810106498
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => handleCopy("243810106498", "pnb-account")}
+                                className="inline-flex items-center justify-center rounded-md border border-[#C3A161]/40 bg-white px-2 py-1 text-[10px] sm:text-xs text-[#0A3428] hover:bg-[#FFF7E6] hover:border-[#C3A161]/70 transition-colors"
+                                aria-label="Copy PNB account number"
+                              >
+                                {copiedField === "pnb-account" ? (
+                                  <>
+                                    <Check className="w-3 h-3 mr-1 text-emerald-600" />
+                                    Copied
+                                  </>
+                                ) : (
+                                  <>
+                                    <Copy className="w-3 h-3 mr-1" />
+                                    Copy
+                                  </>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p className="text-[10px] sm:text-xs md:text-sm text-[#0A3428]/70 font-sans text-center pt-1">
+                          You may also scan the QR using your banking app or use the copied account number for manual transfer.
+                        </p>
+                      </div>
                     </div>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base text-[#C5A572] pt-1 sm:pt-2 md:pt-3">
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-current flex-shrink-0" />
+                    <span className="font-sans text-center">
+                      Thank you for loving us in such a thoughtful way.
+                    </span>
                   </div>
                 </div>
               </div>

@@ -40,13 +40,13 @@ export default function Home() {
         <Countdown />
         <Gallery />
         <Messages />
+        <Registry />
         <Details />
         <Entourage />
         <PrincipalSponsors />
         <JuniorSponsors />
         <GuestList />
         <BookOfGuests />
-        <Registry />
         <FAQ />
         <SnapShare />
         <Footer />
